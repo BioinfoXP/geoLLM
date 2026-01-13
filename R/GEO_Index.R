@@ -381,22 +381,22 @@ GEO_Screen_AI <- function(input_data = NULL,
     return(input_data[0, ])
   }
 
-  final_df <- final_df %>% dplyr::distinct(!!rlang::sym(id_col), .keep_all = TRUE)
+  final_df <- final_df |> dplyr::distinct(!!rlang::sym(id_col), .keep_all = TRUE)
 
   if (!is.na(samp_col)) {
     sample_nums <- stringr::str_extract(as.character(final_df[[samp_col]]), "^\\d+")
     if (all(is.na(sample_nums))) sample_nums <- final_df[[samp_col]]
 
-    final_df <- final_df %>%
-      dplyr::mutate(tmp_sort_N = suppressWarnings(as.numeric(sample_nums))) %>%
-      dplyr::arrange(dplyr::desc(tmp_sort_N)) %>%
+    final_df <- final_df |>
+      dplyr::mutate(tmp_sort_N = suppressWarnings(as.numeric(sample_nums))) |>
+      dplyr::arrange(dplyr::desc(tmp_sort_N)) |>
       dplyr::select(-tmp_sort_N)
   }
 
   prio_cols <- c(id_col, sp_col, type_col, dis_col, samp_col, desc_col)
   prio_cols <- prio_cols[!is.na(prio_cols) & prio_cols %in% names(final_df)]
   other_cols <- setdiff(names(final_df), prio_cols)
-  final_df <- final_df %>% dplyr::select(dplyr::all_of(c(prio_cols, other_cols)))
+  final_df <- final_df |> dplyr::select(dplyr::all_of(c(prio_cols, other_cols)))
 
   return(final_df)
 }
