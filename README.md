@@ -1,12 +1,12 @@
 ---
 
-# GEOScreenAI 🧬🤖
+# geoLLM 🧬🤖
 
-[](https://www.google.com/search?q=https://github.com/BioinfoXP/GEOScreenAI/actions)
+[](https://www.google.com/search?q=https://github.com/BioinfoXP/geoLLM/actions)
 [](https://www.google.com/search?q=https://lifecycle.r-lib.org/articles/stages.html%23experimental)
-**GEOScreenAI** is an R package designed to revolutionize how researchers filter Gene Expression Omnibus (GEO) metadata.
+**geoLLM** is an R package designed to revolutionize how researchers filter Gene Expression Omnibus (GEO) metadata.
 
-Unlike traditional methods that rely on rigid Regular Expressions (Regex) or manual keyword searching, **GEOScreenAI uses Large Language Models (LLMs)** to semantically understand and classify datasets. It can distinguish between "Pancreatic Cancer" and "Liver Cancer" even if the text is complex, and accurately identify sequencing types (scRNA-seq, Spatial, Bulk) from messy descriptions.
+Unlike traditional methods that rely on rigid Regular Expressions (Regex) or manual keyword searching, **geoLLM uses Large Language Models (LLMs)** to semantically understand and classify datasets. It can distinguish between "Pancreatic Cancer" and "Liver Cancer" even if the text is complex, and accurately identify sequencing types (scRNA-seq, Spatial, Bulk) from messy descriptions.
 
 ## 🌟 Key Features
 
@@ -18,15 +18,15 @@ Unlike traditional methods that rely on rigid Regular Expressions (Regex) or man
 
 ## 📦 Installation
 
-You can install the development version of GEOScreenAI from GitHub:
+You can install the development version of geoLLM from GitHub:
 
 ```r
 # Install devtools if you haven't already
 if (!requireNamespace("devtools", quietly = TRUE))
     install.packages("devtools")
 
-# Install GEOScreenAI
-devtools::install_github("BioinfoXP/GEOScreenAI")
+# Install geoLLM
+devtools::install_github("BioinfoXP/geoLLM")
 
 ```
 
@@ -35,7 +35,7 @@ devtools::install_github("BioinfoXP/GEOScreenAI")
 Before using the package, you need to set up your LLM API key. This package is compatible with OpenAI-style APIs (e.g., OpenAI, SiliconFlow, DeepSeek).
 
 ```r
-library(GEOScreenAI)
+library(geoLLM)
 
 # Option 1: Set environment variable (Recommended for security)
 Sys.setenv(OPENAI_API_KEY = "sk-xxxxxxxxxxxxxxxxxxxxxxxx")
@@ -51,10 +51,10 @@ Sys.setenv(OPENAI_API_KEY = "sk-xxxxxxxxxxxxxxxxxxxxxxxx")
 
 ### Scenario 1: Mining the Built-in Database (Zero Setup)
 
-**GEOScreenAI** includes a massive built-in database of **1,975 datasets**. You don't need to load any files to start mining data immediately.
+**geoLLM** includes a massive built-in database of **1,975 datasets**. You don't need to load any files to start mining data immediately.
 
 ```r
-library(GEOScreenAI)
+library(geoLLM)
 
 # 1. Check what's inside the built-in database
 data("geo_database")
