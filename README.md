@@ -145,4 +145,4 @@ res <- GEO_Screen_AI(
 
 ## 📄 License
 
-MIT © [Your Name]
+  MIT © [BioinfoXP]
