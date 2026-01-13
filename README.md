@@ -140,6 +140,8 @@ If you provide your own `input_data`, it should be a `data.frame` containing at 
 
 You can easily switch to other LLM providers like **DeepSeek** or **SiliconFlow**:
 
+- https://cloud.siliconflow.cn/i/zIsztzpU
+
 ```r
 res <- GEO_Screen_AI(
   disease = "Liver Cancer",
